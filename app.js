@@ -58,7 +58,7 @@ function renderGrid() {
     <div class="card">
       <div class="card-img-container">
         ${p.popular ? '<span class="badge-popular">⭐ Popular</span>' : ''}
-        <img src="${p.img}" alt="${p.name}" class="product-img" onerror="this.src='chifle_salado.jpeg'">
+        <img src="${p.img}" alt="${p.name}" class="product-img" onerror="this.src='https://via.placeholder.com/400x300?text=Chifles'">
       </div>
       <div class="card-body">
         <div class="card-tags-row">
@@ -153,7 +153,7 @@ function renderCart() {
     const [id, variant] = key.split(':');
     const p = products.find(x => x.id == id); subtotal += p.price * cart[key];
     return `<div class="item">
-      <div class="item-img-mini"><img src="${p.img}" alt="${p.name}" onerror="this.src='chifle_salado.jpeg'"></div>
+      <div class="item-img-mini"><img src="${p.img}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/100x100?text=C'"></div>
       <div class="item-info">
         <div class="item-name">${p.name} ${variant ? '<small>(' + variant + ')</small>' : ''}</div>
         <div class="item-price">S/ ${p.price.toFixed(2)} c/u</div>
@@ -282,7 +282,7 @@ function abrirSeguimiento() {
         <div class="step-desc">Tu pedido ha sido enviado a nuestro WhatsApp y pronto estará en tus manos 🫙</div>
       </div>
     </div>`;
-  const itemsHtml = pedidoActual.items.map(i => `<img src="${i.img}" width="20" height="20" style="border-radius:4px;vertical-align:middle;margin-right:5px" onerror="this.src='chifle_salado.jpeg'"> ${i.nombre} x${i.cantidad} — S/ ${(i.precio * i.cantidad).toFixed(2)}`).join('<br>');
+  const itemsHtml = pedidoActual.items.map(i => `<img src="${i.img}" width="20" height="20" style="border-radius:4px;vertical-align:middle;margin-right:5px" onerror="this.src='https://via.placeholder.com/50x50?text=C'"> ${i.nombre} x${i.cantidad} — S/ ${(i.precio * i.cantidad).toFixed(2)}`).join('<br>');
   document.getElementById('seguimiento-contenido').innerHTML = `
     <div class="seguimiento-header">
       <h3>📦 Seguimiento de pedido</h3>
