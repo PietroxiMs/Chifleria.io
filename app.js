@@ -8,24 +8,24 @@ const WHATSAPP = '51974651216';
 ============================================= */
 const products = [
   // SALADOS
-  { id: 1, name: "Chifles Salados", desc: "Plátano verde frito, sal de mar. 45g crujientes.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: true, size: "12+1", hasCuts: true },
+  { id: 1, name: "Chifles Salados", desc: "Plátano verde frito, sal de mar. 45g crujientes.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: true, size: "12+1 unid", hasCuts: true },
   { id: 2, name: "Chifles Salados", desc: "El clásico norteño en tamaño familiar. 1 kilo.", price: 25.0, img: "chifle_grande.jpeg", cat: "salado", popular: false, size: "1kg", hasCuts: true },
-  { id: 3, name: "Chifles Picantes", desc: "Con ají amarillo y un toque de rocoto. 45g.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: true, size: "12+1", hasCuts: true },
+  { id: 3, name: "Chifles Picantes", desc: "Con ají amarillo y un toque de rocoto. 45g.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: true, size: "12+1 unid", hasCuts: true },
   { id: 4, name: "Chifles Picantes", desc: "Para los valientes del norte. Ají amarillo. 1 kilo.", price: 25.0, img: "chifle grande 02.jpeg", cat: "salado", popular: false, size: "1kg", hasCuts: true },
-  { id: 13, name: "Chifles de Tocino", desc: "Delicioso sabor ahumado a tocino. 45g.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: false, size: "12+1", hasCuts: true },
-  { id: 14, name: "Chifles al Ajo", desc: "Crujientes chifles con un toque de ajo tostado. 45g.", price: 10.0, img: "chifles de ajo.jpeg", cat: "salado", popular: false, size: "12+1", hasCuts: true },
-  { id: 15, name: "Chifles sabor Ceviche", desc: "El sabor bandera, cítrico y picantito. 45g.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: true, size: "12+1", hasCuts: true },
-  { id: 16, name: "Chifles Leche de Tigre", desc: "Intenso sabor norteño a leche de tigre. 45g.", price: 10.0, img: "chifles leche de tigre.jpeg", cat: "salado", popular: false, size: "12+1", hasCuts: true },
+  { id: 13, name: "Chifles de Tocino", desc: "Delicioso sabor ahumado a tocino. 45g.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: false, size: "12+1 unid", hasCuts: true },
+  { id: 14, name: "Chifles al Ajo", desc: "Crujientes chifles con un toque de ajo tostado. 45g.", price: 10.0, img: "chifles de ajo.jpeg", cat: "salado", popular: false, size: "12+1 unid", hasCuts: true },
+  { id: 15, name: "Chifles sabor Ceviche", desc: "El sabor bandera, cítrico y picantito. 45g.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: true, size: "12+1 unid", hasCuts: true },
+  { id: 16, name: "Chifles Leche de Tigre", desc: "Intenso sabor norteño a leche de tigre. 45g.", price: 10.0, img: "chifles leche de tigre.jpeg", cat: "salado", popular: false, size: "12+1 unid", hasCuts: true },
   // DULCES
-  { id: 5, name: "Chifles Dulces", desc: "Azúcar y canela sobre plátano verde frito. 45g.", price: 10.0, img: "chifle_dulce.jpeg", cat: "dulce", popular: true, size: "12+1", hasCuts: true },
+  { id: 5, name: "Chifles Dulces", desc: "Azúcar y canela sobre plátano verde frito. 45g.", price: 10.0, img: "chifle_dulce.jpeg", cat: "dulce", popular: true, size: "12+1 unid", hasCuts: true },
   { id: 6, name: "Chifles Dulces", desc: "El antojo favorito de chicos y grandes. 1 kilo.", price: 25.0, img: "chifle grande 03.jpeg", cat: "dulce", popular: false, size: "1kg", hasCuts: true },
-  { id: 7, name: "Cocoliche", desc: "Chifles bañados en coco rallado y chancaca. 45g.", price: 10.0, img: "cocoliche 2.jpeg", cat: "dulce", popular: true, size: "12+1" },
-  { id: 8, name: "Maní Acaramelado", desc: "Maní tostado con caramelo artesanal. 45g.", price: 10.0, img: "mani_acaramelado.jpeg", cat: "dulce", popular: false, size: "12+1" },
-  { id: 19, name: "Camote Frito", desc: "Hojuelas de camote crujientes y dulces.", price: 10.0, img: "camote.jpeg", cat: "especial", popular: false, size: "12+1" },
+  { id: 7, name: "Cocoliche", desc: "Chifles bañados en coco rallado y chancaca. 45g.", price: 10.0, img: "cocoliche 2.jpeg", cat: "dulce", popular: true, size: "15 unid" },
+  { id: 8, name: "Maní Acaramelado", desc: "Maní tostado con caramelo artesanal. 45g.", price: 10.0, img: "mani_acaramelado.jpeg", cat: "dulce", popular: false, size: "12+1 unid" },
+  { id: 19, name: "Camote Frito", desc: "Hojuelas de camote crujientes y dulces.", price: 10.0, img: "camote.jpeg", cat: "especial", popular: false, size: "12+1 unid" },
   // ESPECIALES
-  { id: 9, name: "Arrocillo", desc: "Arroz frito crujiente con sal de mar y especias. 45g.", price: 10.0, img: "arrocillo.jpeg", cat: "especial", popular: false, size: "12+1" },
-  { id: 10, name: "Orejas", desc: "Hojuelas de trigo fritas, crujientes y livianas. 45g.", price: 10.0, img: "orejas.jpeg", cat: "especial", popular: true, size: "12+1" },
-  { id: 17, name: "Chifles con Carne Seca", desc: "El clásico piurano con trozos de carne seca. 45g.", price: 10.0, img: "chifle_con_carne_seca.jpeg", cat: "especial", popular: true, size: "12+1", hasCuts: true },
+  { id: 9, name: "Arrocillo", desc: "Arroz frito crujiente con sal de mar y especias. 45g.", price: 10.0, img: "arrocillo.jpeg", cat: "especial", popular: false, size: "15 unid" },
+  { id: 10, name: "Orejas", desc: "Hojuelas de trigo fritas, crujientes y livianas. 45g.", price: 10.0, img: "orejas.jpeg", cat: "especial", popular: true, size: "15 unid" },
+  { id: 17, name: "Chifles con Carne Seca", desc: "El clásico piurano con trozos de carne seca. 45g.", price: 10.0, img: "chifle_con_carne_seca.jpeg", cat: "especial", popular: true, size: "12+1 unid", hasCuts: true },
 ];
 
 /* === ESTADO === */
