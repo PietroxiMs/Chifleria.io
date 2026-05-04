@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- =============================================
+       SEO — EDITA ESTOS DATOS
+  ============================================= -->
+  <title>El Cucharon Alteño – Chifles artesanales de Piura</title>
+  <meta name="description" content="Chifles artesanales del norte del Perú. Salados, dulces y especiales. Pedidos por WhatsApp, Yape y QR. Delivery en Piura.">
+  <meta name="keywords" content="chifles, chifles artesanales, chifles Piura, snacks peruanos, El Cucharon Alteño">
+  <meta name="author" content="El Cucharon Alteño">
+
+  <!-- Open Graph — para compartir en redes sociales y WhatsApp -->
+  <meta property="og:title" content="El Cucharon Alteño – Chifles artesanales">
+  <meta property="og:description" content="Los mejores chifles artesanales del norte del Perú. Pide por WhatsApp o Yape.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tucucharon.com">
+  <meta property="og:image" content="https://tucucharon.com/foto-chifles.jpg">
+  <meta property="og:locale" content="es_PE">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <span>El Cucharon</span> Alteño
+    <small>Chifles artesanales · Piura</small>
+  </div>
+  <button class="cart-btn" onclick="openCart()">
+    🛒 Carrito
+    <span class="cart-count" id="cart-count">0</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Chifles artesanales</h1>
+  <p>Del norte del Perú, directo a tu mesa</p>
+</div>
+
+<!-- FILTROS Y BUSCADOR -->
+<div class="filters-container">
+  <div class="filters">
+    <button class="filter-btn active" onclick="filter(this,'all')">Todos</button>
+    <button class="filter-btn" onclick="filter(this,'salado')">Salados</button>
+    <button class="filter-btn" onclick="filter(this,'dulce')">Dulces</button>
+    <button class="filter-btn" onclick="filter(this,'especial')">Especiales</button>
+  </div>
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="Buscar producto..." oninput="handleSearch()">
+    <span class="search-icon">🔍</span>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid" id="grid"></div>
+
+<!-- SOBRE NOSOTROS -->
+<div class="seccion">
+  <div class="sobre">
+    <div class="sobre-img">
+      <img src="imagenes/chifle salado.jpeg" alt="Chifles artesanales" onerror="this.src='imagenes/chifle salado.jpeg'">
+    </div>
+    <div class="sobre-texto">
+      <h2>Nuestra historia</h2>
+      <p>
+        El Cucharon Alteño nació en el corazón de Piura, con la receta que aprendimos de nuestra abuela.
+        Cada bolsa está hecha a mano, con plátanos verdes seleccionados del campo y aceite puro.
+        Sin conservantes, sin artificiales — solo el sabor auténtico del norte del Perú.
+      </p>
+      <div class="sobre-datos">
+        <div class="dato"><div class="dato-num">+500</div><div class="dato-label">Clientes felices</div></div>
+        <div class="dato"><div class="dato-num">100%</div><div class="dato-label">Artesanal</div></div>
+        <div class="dato"><div class="dato-num">12</div><div class="dato-label">Sabores únicos</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIOS -->
+<div class="seccion" style="margin-top:3.5rem">
+  <div class="sec-titulo">Lo que dicen nuestros clientes</div>
+  <div class="sec-sub">Reseñas reales de personas que ya probaron nuestros chifles</div>
+  <div class="testimonios-grid">
+    <div class="testimonio">
+      <div class="estrellas">★★★★★</div>
+      <div class="testimonio-texto">"Los mejores chifles que he probado. El sabor a chancaca es increíble, los pido cada semana."</div>
+      <div class="testimonio-autor">María C.</div>
+      <div class="testimonio-lugar">Piura</div>
+    </div>
+    <div class="testimonio">
+      <div class="estrellas">★★★★★</div>
+      <div class="testimonio-texto">"El pack familiar es perfecto para reuniones. Llegaron súper rápido y bien empacados."</div>
+      <div class="testimonio-autor">Carlos R.</div>
+      <div class="testimonio-lugar">Sullana</div>
+    </div>
+    <div class="testimonio">
+      <div class="estrellas">★★★★★</div>
+      <div class="testimonio-texto">"Los chifles de ají tienen el picante justo. Los llevo siempre al trabajo, todos me los piden."</div>
+      <div class="testimonio-autor">Ana P.</div>
+      <div class="testimonio-lugar">Lima (pedido por delivery)</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="seccion" style="margin-top:3.5rem">
+  <div class="contacto-box">
+    <div class="contacto-texto">
+      <h2>¿Dónde encontrarnos?</h2>
+      <p>Hacemos delivery local y envíos a todo el Perú.</p>
+    </div>
+    <div class="contacto-datos">
+      <div class="contacto-dato">📍 <strong>Piura, Perú</strong> — Delivery local disponible</div>
+      <div class="contacto-dato">📱 <strong>974 651 216</strong> — WhatsApp y llamadas</div>
+      <div class="contacto-dato">🕐 <strong>Lunes a Sábado</strong> — 8am a 8pm</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 El Cucharon Alteño · Piura, Perú ·
+  <a href="https://wa.me/51974651216">Escríbenos por WhatsApp</a>
+</footer>
+
+<!-- CARRITO LATERAL -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h2>Tu pedido</h2>
+    <button class="close-btn" onclick="closeCart()">×</button>
+  </div>
+  <div class="drawer-items" id="drawer-items"></div>
+  <div class="drawer-footer" id="drawer-footer" style="display:none">
+    <div class="total-rows" id="total-rows"></div>
+    
+    <div class="pay-label">Dirección de entrega</div>
+    <input type="text" id="order-address" placeholder="Ej. Av. Grau 123, Piura" class="address-input" oninput="checkCheckout()">
+
+    <div class="pay-label" style="margin-top:0.8rem">Elige tu método de pago</div>
+    <div class="pay-methods">
+      <div class="pay-opt" id="opt-yape" onclick="selectPay('yape')"><span class="pay-icon">💜</span>Yape</div>
+      <div class="pay-opt" id="opt-qr" onclick="selectPay('qr')"><span class="pay-icon">⬛</span>QR / Plin</div>
+      <div class="pay-opt" id="opt-wsp" onclick="selectPay('wsp')"><span class="pay-icon">💬</span>WhatsApp</div>
+    </div>
+    <button class="checkout-btn" id="checkout-btn" onclick="checkout()" disabled>Completa los datos</button>
+  </div>
+</div>
+
+<!-- MODAL YAPE -->
+<div class="modal-wrap" id="modal-yape">
+  <div class="modal">
+    <h3>Pago por Yape 💜</h3>
+    <p>Yapea al número de El Cucharon Alteño y envíanos el comprobante.</p>
+    <div class="qr-box">
+      <!-- REEMPLAZA CON TU QR REAL DE YAPE:
+           <img src="qr-yape.png" width="120" height="120" alt="QR Yape"> -->
+      <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#FAEEDA"/>
+        <rect x="10" y="10" width="40" height="40" fill="none" stroke="#854F0B" stroke-width="4"/>
+        <rect x="18" y="18" width="24" height="24" fill="#854F0B"/>
+        <rect x="70" y="10" width="40" height="40" fill="none" stroke="#854F0B" stroke-width="4"/>
+        <rect x="78" y="18" width="24" height="24" fill="#854F0B"/>
+        <rect x="10" y="70" width="40" height="40" fill="none" stroke="#854F0B" stroke-width="4"/>
+        <rect x="18" y="78" width="24" height="24" fill="#854F0B"/>
+        <rect x="70" y="70" width="8" height="8" fill="#854F0B"/>
+        <rect x="82" y="70" width="8" height="8" fill="#854F0B"/>
+        <rect x="94" y="70" width="16" height="8" fill="#854F0B"/>
+        <rect x="70" y="82" width="16" height="8" fill="#854F0B"/>
+        <rect x="94" y="82" width="8" height="8" fill="#854F0B"/>
+        <rect x="70" y="94" width="8" height="16" fill="#854F0B"/>
+        <rect x="82" y="94" width="16" height="8" fill="#854F0B"/>
+      </svg>
+    </div>
+    <div class="yape-num">974 651 216</div>
+    <p style="font-size:12px;margin-top:4px">El Cucharon Alteño</p>
+    <div class="modal-actions">
+      <button class="modal-btn secondary" onclick="closeModal('modal-yape')">Cerrar</button>
+      <button class="modal-btn primary" onclick="sendComprobante()">Enviar comprobante 💬</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL QR -->
+<div class="modal-wrap" id="modal-qr">
+  <div class="modal">
+    <h3>Pago por QR / Plin ⬛</h3>
+    <p>Escanea desde tu app bancaria o Plin para pagar.</p>
+    <div class="qr-box">
+      <!-- REEMPLAZA CON TU QR REAL DE PLIN/BANCO:
+           <img src="qr-plin.png" width="120" height="120" alt="QR Plin"> -->
+      <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" fill="#FAEEDA"/>
+        <rect x="10" y="10" width="40" height="40" fill="none" stroke="#854F0B" stroke-width="4"/>
+        <rect x="18" y="18" width="24" height="24" fill="#854F0B"/>
+        <rect x="70" y="10" width="40" height="40" fill="none" stroke="#854F0B" stroke-width="4"/>
+        <rect x="78" y="18" width="24" height="24" fill="#854F0B"/>
+        <rect x="10" y="70" width="40" height="40" fill="none" stroke="#854F0B" stroke-width="4"/>
+        <rect x="18" y="78" width="24" height="24" fill="#854F0B"/>
+        <rect x="70" y="72" width="10" height="10" fill="#854F0B"/>
+        <rect x="84" y="72" width="6" height="6" fill="#854F0B"/>
+        <rect x="94" y="72" width="16" height="6" fill="#854F0B"/>
+        <rect x="70" y="86" width="18" height="6" fill="#854F0B"/>
+        <rect x="92" y="86" width="6" height="10" fill="#854F0B"/>
+        <rect x="72" y="96" width="6" height="14" fill="#854F0B"/>
+        <rect x="82" y="100" width="10" height="6" fill="#854F0B"/>
+        <rect x="96" y="100" width="14" height="10" fill="#854F0B"/>
+      </svg>
+    </div>
+    <p style="font-size:13px;margin-top:4px;color:#854F0B;font-weight:700">Número: 974 651 216</p>
+    <div class="modal-actions">
+      <button class="modal-btn secondary" onclick="closeModal('modal-qr')">Cerrar</button>
+      <button class="modal-btn primary" onclick="sendComprobante()">Enviar comprobante 💬</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SEGUIMIENTO DEL PEDIDO -->
+<div class="modal-wrap" id="modal-seguimiento">
+  <div class="modal modal-seguimiento">
+    <div id="seguimiento-contenido"></div>
+    <div class="modal-actions">
+      <button class="modal-btn secondary" onclick="cerrarSeguimiento()">Cerrar</button>
+      <button class="modal-btn primary" onclick="abrirWhatsAppDirecto()">Consultar por WhatsApp 💬</button>
+    </div>
+  </div>
+</div>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<button class="wsp-float" onclick="abrirWhatsAppDirecto()" title="Escríbenos por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.648 4.835 1.783 6.865L2 30l7.335-1.762A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.55 11.55 0 01-5.89-1.608l-.422-.25-4.354 1.046 1.067-4.243-.276-.437A11.56 11.56 0 014.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.347-.174-2.055-1.013-2.374-1.13-.319-.115-.551-.173-.783.174-.232.347-.899 1.13-1.102 1.362-.202.232-.405.26-.752.086-.347-.173-1.465-.54-2.79-1.72-1.031-.919-1.727-2.054-1.93-2.401-.202-.347-.022-.535.152-.707.157-.156.347-.405.52-.608.174-.202.232-.347.347-.578.116-.232.058-.434-.029-.608-.087-.173-.783-1.887-1.073-2.584-.283-.678-.57-.586-.783-.597l-.666-.012c-.232 0-.608.087-.926.434-.318.347-1.217 1.189-1.217 2.9s1.246 3.362 1.42 3.594c.173.232 2.45 3.74 5.937 5.245.83.358 1.478.572 1.983.732.833.265 1.59.228 2.189.138.668-.1 2.055-.84 2.345-1.651.29-.811.29-1.507.203-1.651-.086-.144-.318-.231-.666-.405z"/>
+  </svg>
+</button>
+
+<!-- MODAL SELECCIÓN DE CORTE -->
+<div class="modal-wrap" id="modal-corte">
+  <div class="modal">
+    <h3>¿Cómo deseas tu chifle? 🍟</h3>
+    <p>Elige el corte que más te guste para tu pedido.</p>
+    <div class="pay-methods">
+      <div class="pay-opt" id="corte-redondo" onclick="selectCorte('redondo')">
+        <span class="pay-icon">⭕</span> Redondo
+      </div>
+      <div class="pay-opt" id="corte-largo" onclick="selectCorte('largo')">
+        <span class="pay-icon">📏</span> Largo
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn secondary" onclick="closeModal('modal-corte')">Cancelar</button>
+      <button class="modal-btn primary" id="confirmar-corte-btn" onclick="confirmarCorte()" disabled>Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
