@@ -75,7 +75,7 @@
       <div class="sobre-datos">
         <div class="dato"><div class="dato-num">+500</div><div class="dato-label">Clientes felices</div></div>
         <div class="dato"><div class="dato-num">100%</div><div class="dato-label">Artesanal</div></div>
-        <div class="dato"><div class="dato-num">12</div><div class="dato-label">Sabores únicos</div></div>
+        <div class="dato"><div class="dato-num">13</div><div class="dato-label">Sabores únicos</div></div>
       </div>
     </div>
   </div>
@@ -103,6 +103,17 @@
       <div class="testimonio-texto">"Los chifles de ají tienen el picante justo. Los llevo siempre al trabajo, todos me los piden."</div>
       <div class="testimonio-autor">Ana P.</div>
       <div class="testimonio-lugar">Lima (pedido por delivery)</div>
+    </div>
+  </div>
+
+  <!-- DEJAR COMENTARIO -->
+  <div class="dejar-comentario" style="margin-top:2.5rem; background: #fff; padding: 1.8rem; border-radius: var(--radius); border: 2px solid var(--border); box-shadow: 0 4px 16px var(--shadow);">
+    <h3 style="font-family: 'Fredoka One', cursive; color: var(--orange-d); margin-bottom: 0.5rem; text-align: center;">¿Ya probaste nuestros chifles?</h3>
+    <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; text-align: center;">Déjanos tu opinión para seguir mejorando o enviarnos tus sugerencias.</p>
+    <div style="display:flex; gap: 1rem; flex-wrap:wrap; align-items: center;">
+      <input type="text" id="review-name" placeholder="Tu nombre" class="address-input" style="flex:1; min-width:200px; margin-bottom:0;">
+      <textarea id="review-text" placeholder="Escribe tu comentario aquí..." class="address-input" style="flex:2; min-width:250px; min-height:48px; resize:vertical; margin-bottom:0;"></textarea>
+      <button class="checkout-btn" style="flex: 0 0 auto; width: auto; padding: 12px 24px;" onclick="enviarComentario()">Enviar comentario</button>
     </div>
   </div>
 </div>

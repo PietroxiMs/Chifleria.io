@@ -16,6 +16,7 @@ const products = [
   { id: 14, name: "Chifles al Ajo", desc: "Crujientes chifles con un toque de ajo tostado. 45g.", price: 10.0, img: "chifles de ajo.jpeg", cat: "salado", popular: false, size: "12+1 unid", hasCuts: true },
   { id: 15, name: "Chifles sabor Ceviche", desc: "El sabor bandera, cítrico y picantito. 45g.", price: 10.0, img: "chifle_salado.jpeg", cat: "salado", popular: true, size: "12+1 unid", hasCuts: true },
   { id: 16, name: "Chifles Leche de Tigre", desc: "Intenso sabor norteño a leche de tigre. 45g.", price: 10.0, img: "chifles leche de tigre.jpeg", cat: "salado", popular: false, size: "12+1 unid", hasCuts: true },
+  { id: 20, name: "Chifles sabor Pollo a la Brasa", desc: "El irresistible sabor de nuestro plato bandera. 45g.", price: 10.0, img: "chifles pollo a la brasa.jpeg", cat: "salado", popular: true, size: "12+1 unid", hasCuts: true },
   // DULCES
   { id: 5, name: "Chifles Dulces", desc: "Azúcar y canela sobre plátano verde frito. 45g.", price: 10.0, img: "chifle_dulce.jpeg", cat: "dulce", popular: true, size: "12+1 unid", hasCuts: true },
   { id: 6, name: "Chifles Dulces", desc: "El antojo favorito de chicos y grandes. 1 kilo.", price: 25.0, img: "chifle grande 03.jpeg", cat: "dulce", popular: false, size: "1kg", hasCuts: true },
@@ -25,7 +26,7 @@ const products = [
   // ESPECIALES
   { id: 9, name: "Arrocillo", desc: "Arroz frito crujiente con sal de mar y especias. 45g.", price: 10.0, img: "arrocillo.jpeg", cat: "especial", popular: false, size: "15 unid" },
   { id: 10, name: "Orejas", desc: "Hojuelas de trigo fritas, crujientes y livianas. 45g.", price: 10.0, img: "orejas.jpeg", cat: "especial", popular: true, size: "15 unid" },
-  { id: 17, name: "Chifles con Carne Seca", desc: "El clásico piurano con trozos de carne seca. 45g.", price: 10.0, img: "chifle_con_carne_seca.jpeg", cat: "especial", popular: true, size: "12+1 unid", hasCuts: true },
+  { id: 17, name: "Chifles con Carne Seca", desc: "El clásico piurano con trozos de carne seca. 45g.", price: 15.0, img: "chifle_con_carne_seca.jpeg", cat: "especial", popular: true, size: "12 unid", hasCuts: true },
 ];
 
 /* === ESTADO === */
@@ -322,6 +323,19 @@ function closeModal(id) { document.getElementById(id).classList.remove('open'); 
 function showToast(msg) {
   const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function enviarComentario() {
+  const nombre = document.getElementById('review-name').value.trim();
+  const texto = document.getElementById('review-text').value.trim();
+  if (!nombre || !texto) {
+    showToast('Por favor completa tu nombre y comentario ⚠️');
+    return;
+  }
+  const msg = `Hola! Quiero dejar este comentario sobre sus chifles:\n\n*${nombre}:* "${texto}"`;
+  window.open('https://api.whatsapp.com/send?phone=' + WHATSAPP + '&text=' + encodeURIComponent(msg), '_blank');
+  document.getElementById('review-name').value = '';
+  document.getElementById('review-text').value = '';
 }
 
 renderGrid();
