@@ -20,6 +20,15 @@
   <meta property="og:image" content="https://tucucharon.com/foto-chifles.jpg">
   <meta property="og:locale" content="es_PE">
 
+  <!-- PWA & Optimización Móvil -->
+  <meta name="theme-color" content="#D97706">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="El Cucharon">
+  <link rel="apple-touch-icon" href="app_icon.png">
+  <link rel="manifest" href="manifest.json">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -241,5 +250,14 @@
 <div class="toast" id="toast"></div>
 
 <script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('Service Worker registrado:', reg.scope))
+        .catch(err => console.error('Error Service Worker:', err));
+    });
+  }
+</script>
 </body>
 </html>
